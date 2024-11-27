@@ -1,0 +1,44 @@
+type (
+	userRequest {
+		id       string `path:"id,optional" json:"id,optional"`
+		password string `json:"password,optional"`
+		email    string `json:"email,optional"`
+		name     string `json:"name,optional"`
+	}
+	userResponse {
+		id       string `json:"id"`
+		password string `json:"password"`
+		name     string `json:"name"`
+		email    string `json:"email"`
+	}
+	companyRequest {
+		id       string `path:"id,optional" json:"id,optional"`
+		password string `json:"password,optional"`
+		email    string `json:"email,optional"`
+		name     string `json:"name,optional"`
+	}
+	companyResponse {
+		id       string `json:"id"`
+		password string `json:"password"`
+		name     string `json:"name"`
+		email    string `json:"email"`
+	}
+	empty {
+		ok bool
+	}
+)
+
+service gateway-api {
+	@handler GetUser // TODO: set handler name and delete this comment
+	get /users/id/:id (userRequest) returns (userResponse)
+
+	@handler CreateUser // TODO: set handler name and delete this comment
+	post /users/create (userRequest) returns (empty)
+
+	@handler GetCompany // TODO: set handler name and delete this comment
+	get /companies/id/:id (companyRequest) returns (companyResponse)
+
+	@handler CreateCompany // TODO: set handler name and delete this comment
+	post /companies/create (companyRequest) returns (empty)
+}
+

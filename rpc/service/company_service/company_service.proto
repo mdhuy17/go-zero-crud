@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package company_service;
+option go_package="./company_service";
+
+message CompanyRequest {
+  string id = 1;
+  string email = 2;
+  string password = 3;
+  string name = 4;
+}
+
+message CompanyResponse {
+  string id = 1;
+  string email = 2;
+  string name = 3;
+}
+
+message EmptyResponse {
+  bool ok = 1;
+}
+
+service CompanyService {
+  rpc GetCompany(CompanyRequest) returns(CompanyResponse);
+  rpc CreateCompany(CompanyRequest) returns(EmptyResponse);
+}

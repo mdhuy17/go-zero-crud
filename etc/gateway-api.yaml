@@ -1,0 +1,14 @@
+Name: gateway-api
+Host: 0.0.0.0
+Port: 8888
+UserService:
+  Etcd:
+    Hosts:
+      - localhost:2379
+    Key: userservice.rpc
+
+CompanyService:
+  Etcd:
+    Hosts:
+      - localhost:2379
+    Key: companyservice.rpc
