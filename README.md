@@ -1,3 +1,8 @@
+step 0 
+```
+etcd
+```
+
 step 1
 ```
 docker compose up -d
