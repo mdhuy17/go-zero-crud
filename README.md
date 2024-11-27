@@ -1,3 +1,6 @@
+> goctl api go -api gateway.api -dir .     
+> goctl rpc protoc company_service.proto --go_out=./pb --go-grpc_out=./pb --zrpc_out=.
+
 step 0 
 ```
 etcd
